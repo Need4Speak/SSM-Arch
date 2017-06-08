@@ -3,7 +3,7 @@ package com.pancake.dao;
 /**
  * Created by m on 2017/6/8.
  */
-public interface SuccessKilled {
+public interface SuccessKilledDao {
     /**
      * 插入购买明细，可过滤重复
      * @param seckillId
@@ -17,5 +17,5 @@ public interface SuccessKilled {
      * @param skillId
      * @return
      */
-    SuccessKilled queryByIdWithSeckill(long skillId);
+    SuccessKilledDao queryByIdWithSeckill(long skillId);
 }
