@@ -17,7 +17,8 @@ public interface SuccessKilledDao {
 
     /**
      * 根据id查询SuccessKilled，并携带秒杀产品对象实体
-     * @param skillId
+     * @param seckillId
+     * @param userPhone
      * @return
      */
     SuccessKilled queryByIdWithSeckill(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
