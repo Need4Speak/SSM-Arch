@@ -32,7 +32,7 @@ values
 CREATE TABLE  success_killed(
 `seckill_id` bigint NOT NULL COMMENT '商品库存id',
 `user_phone` bigint NOT NULL COMMENT '用户手机号',
-`state` tinyint NOT NULL DEFAULT -1 COMMENT '-1：无效 0：成功 1：已发货',
+`state` tinyint NOT NULL DEFAULT 0 COMMENT '-1：无效 0：成功 1：已发货',
 `create_time` timestamp NOT NULL COMMENT '创建时间',
 PRIMARY KEY (seckill_id, user_phone),
 key idx_create_time(create_time)
