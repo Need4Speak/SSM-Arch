@@ -4,18 +4,15 @@ package com.pancake.enums;
  * 使用枚举标示常量
  * Created by m on 2017/6/9.
  */
-public enum SeckillStatEnum {
-    SUCCESS(1, "秒杀成功"),
-    END(0, "秒杀结束"),
-    REPEAT_KILL(-1, "重复秒杀"),
-    INNER_ERROR(-2, "系统异常"),
-    DATA_REWRITE(-3, "数据篡改")
+public enum StatEnum {
+    SUCCESS(0, "成功"),
+    ERROR(1, "失败")
     ;
     private int state;
 
     private String stateInfo;
 
-    SeckillStatEnum(int state, String stateInfo) {
+    StatEnum(int state, String stateInfo) {
         this.state = state;
         this.stateInfo = stateInfo;
     }
@@ -28,8 +25,8 @@ public enum SeckillStatEnum {
         return stateInfo;
     }
 
-    public static SeckillStatEnum stateOf(int index) {
-        for (SeckillStatEnum state : values()) {
+    public static StatEnum stateOf(int index) {
+        for (StatEnum state : values()) {
             if (state.getState() == index) {
                 return state;
             }

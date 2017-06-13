@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pancake.dao.UserDao">
+    <select id="queryAll" resultType="User">
+        SELECT id, name, password, phone_number, sex, last_sign_time, status, uni_code
+        FROM user
+        limit #{offset}, #{limit}
+    </select>
+</mapper>
