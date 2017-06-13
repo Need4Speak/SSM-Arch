@@ -35,7 +35,7 @@ public class UserController {
     @ResponseBody
     public Result queryAll() {
         int offset = 0;
-        int limit = 2;
+        int limit = 3;
         return ResultUtil.success(userService.getUserList(offset,limit));
     }
 

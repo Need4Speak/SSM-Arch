@@ -17,7 +17,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50636
 File Encoding         : 65001
 
-Date: 2017-06-13 15:55:49
+Date: 2017-06-13 18:56:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -104,17 +104,18 @@ CREATE TABLE `user` (
   `password` varchar(16) NOT NULL COMMENT '密码最长16位',
   `phone_number` bigint(13) DEFAULT NULL COMMENT '手机号加区号共13位',
   `sex` varchar(6) DEFAULT NULL COMMENT 'male or female',
-  `last_sign_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `last_sign_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `status` int(4) NOT NULL DEFAULT '0' COMMENT '用户的状态，用于对单个用户进行管理，如封禁用户。',
   `uni_code` varchar(32) NOT NULL COMMENT '唯一标致该用户的码值，通过对用户手机号加某一固定字符串经哈希运算得来。',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', '张超', '111', '15528798620', 'male', '2017-06-12 21:42:17', '0', 'F1B3CC22ACD39C7DE72BA0DF2094A5D0');
 INSERT INTO `user` VALUES ('2', '叶雄峰', '111', '15511112222', 'male', '2017-06-12 21:42:47', '0', '72AA745076A356FDD9D5C667EED91088');
+INSERT INTO `user` VALUES ('3', '陈泽堃', '111', '15511111111', 'female', '2017-06-13 18:56:15', '0', '381181B099BD19B8A226ECF18128D465');
 
 -- ----------------------------
 -- Table structure for user_address
@@ -169,3 +170,4 @@ CREATE TABLE `user_role` (
 -- ----------------------------
 INSERT INTO `user_role` VALUES ('1', '1', '1', '张超是客户');
 INSERT INTO `user_role` VALUES ('2', '2', '2', '叶雄峰是师傅');
+
