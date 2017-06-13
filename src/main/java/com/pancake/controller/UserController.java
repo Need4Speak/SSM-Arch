@@ -39,4 +39,14 @@ public class UserController {
         return ResultUtil.success(userService.getUserList(offset,limit));
     }
 
+    /**
+     * 测试
+     * @return Result 对象
+     */
+    @RequestMapping(value = "test", method = RequestMethod.GET)
+    @ResponseBody
+    public Result test() {
+        return ResultUtil.success();
+    }
+
 }

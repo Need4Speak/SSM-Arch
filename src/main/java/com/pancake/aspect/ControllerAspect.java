@@ -21,7 +21,7 @@ public class ControllerAspect {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(public * com.pancake.controller.UserController.queryAll())")
+    @Pointcut("execution(public * com.pancake.controller.UserController.*(..))")
     public void log(){
 
     }
