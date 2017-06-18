@@ -6,7 +6,11 @@ package com.pancake.enums;
  */
 public enum StatEnum {
     SUCCESS(0, "成功"),
-    ERROR(1, "失败")
+    ERROR(1, "失败"),
+    NULL_OBJECT(2, "对象为空"),
+    UPDATE_FAIL(3, "更新失败, 请检查是否存在改动"),
+    NULL_USER_ID(4, "user id 传入错误"),
+    DELETE_USER_FAIL(5, "删除用户失败")
     ;
     private int state;
 

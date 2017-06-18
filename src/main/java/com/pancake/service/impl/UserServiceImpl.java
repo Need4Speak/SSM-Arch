@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -35,5 +36,48 @@ public class UserServiceImpl implements UserService {
         }
         logger.debug("last_sign_time: " + list.get(0).getLastSignTime());
         return list;
+    }
+
+    /**
+     * 添加用户到数据库
+     * @param user User对象
+     */
+    @Transactional
+    public void addUser(User user) throws UserException{
+        userDao.add(user);
+    }
+
+    /**
+     * 根据 传入的 user 对象更新数据库
+     * @param user 前台传入的 User 对象
+     * @return 更新是否成功
+     * @throws UserException
+     */
+    @Transactional
+    public boolean update(User user) throws UserException{
+        //如果user与数据库中存储的user不同，则更新数据库
+        if (!user.equals(userDao.findById(user.getId()))) {
+            userDao.update(user);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 根据主键 userId 删除表中的记录
+     * @param userId 主键
+     * @return 删除是否成功
+     * @throws UserException
+     */
+    @Transactional
+    public boolean deleteById(long userId) throws UserException{
+        //如果user与数据库中存储的user不同，则更新数据库
+        if (null == userDao.findById(userId)) {
+            return false;
+        }
+        else {
+            userDao.deleteById(userId);
+            return true;
+        }
     }
 }

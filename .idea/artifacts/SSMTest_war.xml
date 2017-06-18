@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="SSMTest:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="pancake.war">
+    <root id="archive" name="SSMTest.war">
       <element id="artifact" artifact-name="SSMTest:war exploded" />
     </root>
   </artifact>

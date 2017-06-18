@@ -8,4 +8,27 @@
         FROM user
         limit #{offset}, #{limit}
     </select>
+
+    <insert id="add" parameterType="User">
+        INSERT INTO user (name, password, phone_number, sex,  last_sign_time, status, uni_code)
+        VALUES (#{name}, #{password}, #{phoneNumber}, #{sex},  #{lastSignTime}, #{status}, #{uniCode});
+    </insert>
+
+    <select id="findById" parameterType="long" resultType="User">
+        SELECT id, name, password, phone_number, sex, last_sign_time, status, uni_code
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+    <update id="update" parameterType="User">
+        UPDATE user
+        SET name = #{name}, password = #{password}, phone_number = #{phoneNumber}, sex = #{sex},
+        last_sign_time = #{lastSignTime}, status = #{status}, uni_code = #{uniCode}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM user
+        WHERE id = #{id}
+    </delete>
 </mapper>

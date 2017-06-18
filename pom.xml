@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <spring.version>4.1.7.RELEASE</spring.version>
+    <spring.version>4.0.6.RELEASE</spring.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -149,9 +149,21 @@
       <artifactId>aspectjweaver</artifactId>
       <version>1.6.11</version>
     </dependency>
+    <!-- 4.6 spring security 依赖 -->
+    <!-- Spring Security builds against Spring Framework 4.3.9.RELEASE, but should work with 4.0.x. -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>4.2.3.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>4.2.3.RELEASE</version>
+    </dependency>
 
-  </dependencies>
-  <build>
-    <finalName>pancake</finalName>
-  </build>
+</dependencies>
+<build>
+  <finalName>SSMTest</finalName>
+</build>
 </project>
